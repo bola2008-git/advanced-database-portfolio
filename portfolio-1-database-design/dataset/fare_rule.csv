@@ -1,0 +1,11 @@
+FareRuleID,RuleName,BaseFare,RatePerKilometre,MinimumFare,EffectiveFrom,EffectiveTo,RuleStatus
+1,Standard Pricing Rule 1,526.59,182.32,1060.15,1/1/2025 0:00,3/5/2025 19:12,Historical
+2,Standard Pricing Rule 2,937.4,209.66,959.99,3/5/2025 19:12,5/8/2025 14:24,Historical
+3,Standard Pricing Rule 3,945.49,178.65,807.17,5/8/2025 14:24,7/11/2025 9:36,Historical
+4,Standard Pricing Rule 4,1117.21,213.19,1437.32,7/11/2025 9:36,9/13/2025 4:48,Historical
+5,Standard Pricing Rule 5,1004.28,136.72,1044.42,9/13/2025 4:48,11/16/2025 0:00,Historical
+6,Standard Pricing Rule 6,770.81,105.37,1028.44,11/16/2025 0:00,1/18/2026 19:12,Historical
+7,Standard Pricing Rule 7,741.9,100.59,1377.7,1/18/2026 19:12,3/23/2026 14:24,Historical
+8,Standard Pricing Rule 8,600.71,175.14,1327.74,3/23/2026 14:24,5/26/2026 9:36,Historical
+9,Standard Pricing Rule 9,923.14,125.4,1194.57,5/26/2026 9:36,7/29/2026 4:48,Historical
+10,Standard Pricing Rule 10,1030.32,228.21,954.92,7/29/2026 4:48,,Active
