@@ -1,0 +1,25 @@
+--INTRODUCTION 
+
+This section explores the application of NoSQL databases within the SwiftRide Nigeria ride-hailing system. While Microsoft SQL Server manages structured information such as passenger records, ride bookings, fare calculations and payments, NoSQL databases provide alternative ways of storing and managing flexible, semi-structured and highly connected data.
+
+MongoDB was selected for the practical implementation because its document-based structure supports information such as driver locations, vehicle details and availability status. The exercise demonstrates how a NoSQL database can complement a relational database within a hybrid database architecture.
+
+| NoSQL model   | Example technology | SwiftRide application                                         | Example                                      |
+| ------------- | ------------------ | ------------------------------------------------------------- | -------------------------------------------- |
+| Document      | MongoDB            | Driver profiles and location updates                          | Driver details stored as JSON-like documents |
+| Key-value     | Redis              | Passenger sessions and temporary ride requests                | `passenger:105:session = active`             |
+| Column-family | Apache Cassandra   | Large volumes of driver location history                      | Driver GPS updates recorded over time        |
+| Graph         | Neo4j              | Relationships between passengers, drivers, rides and vehicles | Passenger → booked → Ride                    |
+
+
+MongoDB is suitable for SwiftRide because it provides a flexible document-based structure for storing operational data such as driver profiles, vehicle details, GPS coordinates and availability status. Unlike a traditional relational structure, documents can accommodate additional attributes without requiring frequent changes to a fixed table schema.
+
+Its ability to retrieve and update individual documents also supports operational activities such as identifying available drivers and updating their status when they accept rides.
+
+However, MongoDB does not need to replace Microsoft SQL Server. SQL Server remains appropriate for structured and transactional operations, including passenger registration, ride bookings, fare calculations and payment processing. A hybrid architecture combining both technologies would allow SwiftRide to benefit from relational data integrity and the flexibility of NoSQL storage.
+
+An additional MongoDB feature implemented for SwiftRide was geospatial indexing. Each driver's location was converted into a GeoJSON Point containing longitude and latitude coordinates. A `2dsphere` index was then created on the `geoLocation` field to support geographical searches.
+
+The `$near` operator was used to retrieve drivers within a specified 10-kilometre radius of a simulated passenger pickup location. This demonstrated how MongoDB can support location-based driver searches in a ride-hailing application.
+
+This feature is particularly relevant to SwiftRide because identifying nearby drivers can improve driver allocation and reduce the time passengers spend waiting for a ride.

@@ -1,0 +1,12 @@
+##Introduction
+
+This portfolio explores transaction management and concurrency control in the SwiftRide Nigeria database using Microsoft SQL Server. 
+Practical exercises were performed to demonstrate how transactions maintain data consistency and reliability. 
+These included COMMIT and ROLLBACK operations, the READ COMMITTED isolation level, and the use of UPDLOCK to manage concurrent database access.
+
+## Conclusion
+
+The exercises demonstrated how SQL Server transaction management helps maintain the integrity and consistency of SwiftRide's database. 
+COMMIT was used to save successful operations, while ROLLBACK reversed incorrect changes. 
+READ COMMITTED helped prevent dirty reads, and UPDLOCK demonstrated how conflicting updates can be controlled. 
+Overall, these practical activities highlighted the importance of transaction management and concurrency control in ensuring reliable database operations, particularly when multiple users access the system simultaneously.
