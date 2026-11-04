@@ -1,0 +1,37 @@
+db.adminCommand({ ping: 1 })
+
+db.createCollection("DriverLocations")
+show collections
+
+db.DriverLocations.insertOne({
+    driverId: 301,
+    driverName: "Cloud Test Driver",
+    vehicleRegistration: "SWC-301-LG",
+    location: {
+        type: "Point",
+        coordinates: [3.3792, 6.5244]
+    },
+    availability: "Available",
+    lastUpdated: new Date()
+})
+
+db.DriverLocations.find()
+
+db.DriverLocations.updateOne(
+    { driverId: 301 },
+    {
+        $set: {
+            availability: "On Trip",
+            lastUpdated: new Date()
+        }
+    },
+    {
+        writeConcern: { w: "majority" }
+    }
+)
+
+db.runCommand({
+    find: "DriverLocations",
+    filter: { driverId: 301 },
+    readConcern: { level: "majority" }
+})
